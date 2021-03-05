@@ -1,5 +1,6 @@
 
-# Created by https://www.gitignore.io/api/go,vim,emacs
+# Created by https://www.toptal.com/developers/gitignore/api/go,vim,emacs,vscode
+# Edit at https://www.toptal.com/developers/gitignore?templates=go,vim,emacs,vscode
 
 ### Emacs ###
 # -*- mode: gitignore; -*-
@@ -15,6 +16,7 @@ tramp
 # Org-mode
 .org-id-locations
 *_archive
+ltximg/**
 
 # flymake-mode
 *_flymake.*
@@ -44,55 +46,62 @@ flycheck_*.el
 
 # projectiles files
 .projectile
-projectile-bookmarks.eld
 
 # directory configuration
 .dir-locals.el
 
-# saveplace
-places
+# network security
+/network-security.data
 
-# url cache
-url/cache/
-
-# cedet
-ede-projects.el
-
-# smex
-smex-items
-
-# company-statistics
-company-statistics-cache.el
-
-# anaconda-mode
-anaconda-mode/
 
 ### Go ###
 # Binaries for programs and plugins
 *.exe
+*.exe~
 *.dll
 *.so
 *.dylib
 
-# Test binary, build with `go test -c`
+# Test binary, built with `go test -c`
 *.test
 
 # Output of the go coverage tool, specifically when used with LiteIDE
 *.out
 
-# Project-local glide cache, RE: https://github.com/Masterminds/glide/issues/736
-.glide/
+# Dependency directories (remove the comment below to include it)
+# vendor/
+
+### Go Patch ###
+/vendor/
+/Godeps/
 
 ### Vim ###
-# swap
-.sw[a-p]
-.*.sw[a-p]
-# session
+# Swap
+[._]*.s[a-v][a-z]
+!*.svg  # comment out if you don't need vector files
+[._]*.sw[a-p]
+[._]s[a-rt-v][a-z]
+[._]ss[a-gi-z]
+[._]sw[a-p]
+
+# Session
 Session.vim
-# temporary
+Sessionx.vim
+
+# Temporary
 .netrwhist
-# auto-generated tag files
+# Auto-generated tag files
 tags
+# Persistent undo
+[._]*.un~
 
+### vscode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
 
-# End of https://www.gitignore.io/api/go,vim,emacs
+# End of https://www.toptal.com/developers/gitignore/api/go,vim,emacs,vscode
+

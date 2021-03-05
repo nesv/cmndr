@@ -1,13 +1,13 @@
 package cmndr
 
 import (
-	"flag"
 	"fmt"
 	"os"
 	"sort"
 	"text/tabwriter"
 
 	"github.com/pkg/errors"
+	flag "github.com/spf13/pflag"
 )
 
 // RunFunc defines the arity and return signatures of a function that a Cmd
@@ -41,6 +41,7 @@ func newUsage(c *Cmd) func() {
 		fmt.Fprintf(os.Stderr, "%s - %s\n", c.Name, c.Description)
 		printSubcommands(c)
 		fmt.Fprintln(os.Stderr, "\nFlags")
+		c.Flags.SortFlags = true
 		c.Flags.PrintDefaults()
 	}
 }

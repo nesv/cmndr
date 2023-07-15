@@ -107,7 +107,7 @@ func printSubcommands(c *Cmd) {
 	// Gather a list of all subcommand names, and sort them (for
 	// consistent output).
 	var subNames []string
-	for name, _ := range c.Commands {
+	for name := range c.Commands {
 		subNames = append(subNames, name)
 	}
 	sort.Strings(subNames)
@@ -131,7 +131,6 @@ func printSubcommands(c *Cmd) {
 //
 //	$ my-command help <subcommand>
 //	$ my-command <subcommand> help
-//
 func New(name string, run RunFunc) *Cmd {
 	c := &Cmd{
 		Name:  name,
@@ -165,7 +164,6 @@ func (c *Cmd) AddCmd(cmd *Cmd) {
 // It is essentially a short-hand invocation of
 //
 //	c.ExecArgs(os.Args[1:])
-//
 func (c *Cmd) Exec() {
 	c.ExecArgs(os.Args[1:])
 }
